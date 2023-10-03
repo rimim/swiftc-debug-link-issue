@@ -13,7 +13,7 @@ This issue is reproducible with Xcode14, but is an error in Xcode15. The issue i
     make clean && make
     ...
     error: link command failed with exit code 1 (use -v to see invocation)
-    ld: unknown file type in '/Users/mimir/Research/swiftc-debug-link-bug/.build/swift/DummyLibrary.swiftmodule'
+    ld: unknown file type in 'swift/DummyLibrary.swiftmodule'
     clang: error: linker command failed with exit code 1 (use -v to see invocation)
     error: fatalError
     ninja: build stopped: subcommand failed.
