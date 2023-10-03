@@ -1,4 +1,4 @@
-The issues is reproducible with Xcode14 but is an error in Xcode15. The issue is that when you specify -DCMAKE_BUILD_TYPE=Debug cmake will add "-g" the options passed to swiftc and when you have more than 128 swift source files in your library the .swiftmodule file is added to the linker input files. Xcode14 and possibly earlier only considered this a warning but Xcode15 reports it as an error. Removing "-g" from the CMAKE_Swift_FLAGS_DEBUG will allow the library to compile but without debug info.
+This issue is reproducible with Xcode14, but is an error in Xcode15. The issue is that when using cmake -DCMAKE_BUILD_TYPE=Debug it will add "-g" to the options passed to swiftc and when you have more than 128 swift source files in your library the .swiftmodule file seems to be added to the linker input files. If you have less than 128 files the .swiftmodule is not add or the linker input file is not used. Xcode14 and possibly earlier only considered this a warning, but Xcode15 reports it as an error. Removing "-g" from the CMAKE_Swift_FLAGS_DEBUG will allow the library to compile, but without debug info.
 
 ## Build using Xcode14:
 
